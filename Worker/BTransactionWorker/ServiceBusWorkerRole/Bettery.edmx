@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BetteryModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BetteryModelStoreContainer">
+          <EntitySet Name="Member" EntityType="BetteryModel.Store.Member" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transaction" EntityType="BetteryModel.Store.Transaction" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Transaction_Member" Association="BetteryModel.Store.FK_Transaction_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="Transaction" EntitySet="Transaction" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MemberHash" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="100" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNumber" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="money" Nullable="false" />
+          <Property Name="AuthCode" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Transaction_Member">
+          <End Role="Member" Type="BetteryModel.Store.Member" Multiplicity="1" />
+          <End Role="Transaction" Type="BetteryModel.Store.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BetteryModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BetteryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Members" EntityType="BetteryModel.Member" />
+          <EntitySet Name="Transactions" EntityType="BetteryModel.Transaction" />
+          <AssociationSet Name="FK_Transaction_Member" Association="BetteryModel.FK_Transaction_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberHash" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Transactions" Relationship="BetteryModel.FK_Transaction_Member" FromRole="Member" ToRole="Transaction" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="TransactionID" />
+          </Key>
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderNumber" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="AuthCode" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Member" Relationship="BetteryModel.FK_Transaction_Member" FromRole="Transaction" ToRole="Member" />
+        </EntityType>
+        <Association Name="FK_Transaction_Member">
+          <End Role="Member" Type="BetteryModel.Member" Multiplicity="1" />
+          <End Role="Transaction" Type="BetteryModel.Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="MemberID" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="MemberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BetteryModelStoreContainer" CdmEntityContainer="BetteryEntities">
+          <EntitySetMapping Name="Members"><EntityTypeMapping TypeName="BetteryModel.Member"><MappingFragment StoreEntitySet="Member">
+            <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+            <ScalarProperty Name="MemberHash" ColumnName="MemberHash" />
+            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+            <ScalarProperty Name="LastName" ColumnName="LastName" />
+            <ScalarProperty Name="Address1" ColumnName="Address1" />
+            <ScalarProperty Name="Address2" ColumnName="Address2" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="Country" ColumnName="Country" />
+            <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Transactions"><EntityTypeMapping TypeName="BetteryModel.Transaction"><MappingFragment StoreEntitySet="Transaction">
+            <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+            <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+            <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+            <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+            <ScalarProperty Name="AuthCode" ColumnName="AuthCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Bettery">
+        <EntityTypeShape EntityType="BetteryModel.Member" Width="1.5" PointX="0.75" PointY="1" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="BetteryModel.Transaction" Width="1.5" PointX="3" PointY="1.375" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="BetteryModel.FK_Transaction_Member" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.4612939453125" />
+          <ConnectorPoint PointX="3" PointY="2.4612939453125" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

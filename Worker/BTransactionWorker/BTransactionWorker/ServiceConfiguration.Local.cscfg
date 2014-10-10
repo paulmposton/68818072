@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="BTransactionWorkder" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="ServiceBusWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://BTransactionService-Dev.servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=gkGyPUVrW/BHynikrHJAZrFzXTjhveyR0fucpbU18OQ=" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
