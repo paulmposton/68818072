@@ -1,0 +1,112 @@
+﻿@model Bettery.WebRole.Models.EditMember
+
+@{
+    ViewBag.Title = "Edit Member";
+
+
+}
+
+<div class="main">
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Edit Member Information</legend>
+
+        <div class="editor-label">
+            Member ID
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.MemberID)
+        </div>
+
+        
+        @Html.HiddenFor(model => model.MemberID)
+        @Html.HiddenFor(model => model.CustomerProfileID)
+
+
+        <div class="editor-label">
+            FIRST NAME
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            LAST NAME
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            ADDRESS
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address1)
+            @Html.ValidationMessageFor(model => model.Address1)
+        </div>
+
+        <div class="editor-label">
+            ADDRESS LINE 2
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address2)
+            @Html.ValidationMessageFor(model => model.Address2)
+        </div>
+
+        <div class="editor-label">
+            CITY
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            STATE
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+
+        <div class="editor-label">
+            ZIPCODE
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Zipcode)
+            @Html.ValidationMessageFor(model => model.Zipcode)
+        </div>
+        <div class="editor-label">
+            FREE CASES
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FreeCases)
+            @Html.ValidationMessageFor(model => model.FreeCases)
+        </div>
+
+        <div class="editor-label">
+            @Html.CheckBoxFor(model => model.EmailOptIn)
+            Receive emails about BETTERY news and special offers 
+            <br />
+        </div>
+
+@*              @Html.LabelFor(model => model.CorpAccountID)
+                @Html.DropDownListFor(model => model.CorpAccountID, Model.CorporateAccount)*@
+            <p>
+            
+            @Html.ValidationSummary(true)
+
+            <input type="submit" value="SAVE" />
+            
+        </p>
+    </fieldset>
+}
+
+</div>

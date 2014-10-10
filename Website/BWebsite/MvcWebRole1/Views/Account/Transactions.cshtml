@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Bettery.WebRole.Models.Transaction>
+@{
+    ViewBag.Title = "Transactions";
+}
+        <div class="tabs">
+
+             <ul> 
+                <li>@Html.ActionLink("MY ACCOUNT", "Details", "Account")
+	            <li>@Html.ActionLink("EDIT ACCOUNT", "Edit", "Account")
+                <li id="selected">@Html.ActionLink("PURCHASES", "Transactions", "Account")
+             </ul>
+
+        </div>
+
+<p>&nbsp;</p>
+Click on a purchase date to see more details for each purchase.
+<div class="main">
+<table>
+    <tr>
+        <th>
+            Purchase Date
+        </th>
+        <th>
+            Total BETTERY 4-Packs Purchased
+        </th>
+        <th>
+            Amount
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+        @Html.ActionLink((@Html.DisplayFor(modelItem => item.TransactionDateTime)).ToString(), "TransactionDetail", "Account", new { id = @Html.DisplayFor(modelItem => item.TransactionID) }, null)
+        </td>
+        <td>
+            <p>@Html.DisplayFor(modelItem => item.Vend)</p>
+
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => item.TotalAmount)
+        </td>
+    </tr>
+}
+
+</table>
+
+</div>

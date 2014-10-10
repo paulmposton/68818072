@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "DeleteMember";
+}
+
+<h2>DELETE MEMBERSHIP ACCOUNT</h2>
+
+<h3>Are you sure you want to delete this BETTERY membership account?</h3>
+
+@using (Html.BeginForm()) {
+    <p>
+        @Html.Hidden("id")
+        <input type="submit" value="Delete" />
+    </p>
+}

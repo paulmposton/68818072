@@ -1,0 +1,172 @@
+﻿
+<!doctype html>
+<!--[if !IE]>      <html class="no-js non-ie" dir="ltr" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" dir="ltr" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" dir="ltr" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if IE 9 ]>    <html class="no-js ie9" dir="ltr" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" dir="ltr" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/"> <!--<![endif]-->
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+
+
+<!-- css LB -->
+<!-- <link href="/pageslide/jquery.pageslide.css" rel="stylesheet"> -->
+
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.2.8.7 - http://yoast.com/wordpress/seo/ -->
+<title>BETTERY || Battery Swap and Recycling Station. Disposal Reinvented.</title>
+<meta name="description" content="Conveniently located battery swap, battery recycling stations, at a great price.  AA and AAA household battery recycling.  Better than battery disposal."/>
+<link rel='stylesheet' id='responsive-style-css'  href='/Content/style.css?ver=1.8.4' type='text/css' media='all' />
+<link rel='stylesheet' id='A2A_SHARE_SAVE-css'  href='/Content/themes/base/jquery.ui.datepicker.css' type='text/css' media='all' />
+<link rel='stylesheet' id='A2A_SHARE_SAVE-css'  href='/Content/themes/base/jquery.ui.theme.css' type='text/css' media='all' />
+<link rel='stylesheet' id='A2A_SHARE_SAVE-css'  href='/Content/themes/base/jquery.ui.all.css' type='text/css' media='all' />
+<script src="@Url.Content("~/Scripts/jquery-1.5.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Scripts/responsive-modernizr.js?ver=2.6.1")" type="text/javascript"></script>
+<script type='text/javascript' src='/Scripts/EditorHookup.js'></script>
+<meta name="generator" content="WordPress 3.4.1" />
+
+<!-- We need this for debugging -->
+<!-- Responsive 1.8.1 -->
+<!-- Responsive Child Theme 1.0.0 -->
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #fff; }
+</style>
+<!--[if IE]>
+<style type="text/css">
+.addtoany_list a img{filter:alpha(opacity=70)}
+.addtoany_list a:hover img,.addtoany_list a.addtoany_share_save img{filter:alpha(opacity=100)}
+</style>
+<![endif]-->
+</head>
+
+<body class="home page page-id-2 page-template page-template-full-width-page-php custom-background">
+<div id="header-wrapper" class="clearfix">
+        <div id="logo">
+            <a title="My Action" href="@Url.Action("LogOff", "Account")">
+                <img alt="My Action" src="@Url.Content("/images/cropped-Bettery-Banner-v21.jpg")" />
+            </a>
+        </div><!-- end of #logo -->
+
+    
+    
+        <div id="header">
+
+        <!-- <h1><a class="open" href=".menu">Menu</a>PageSlide Responsive Demo</h1> -->
+        
+    
+
+
+        
+                <ul class="menu">
+                    @if (Request.IsAuthenticated && Session["MemberID"] != null)
+                    {
+                        @: <li>@Html.ActionLink("SIGN OUT", "LogOff", "Account")</li>
+                    }
+                    else
+                    {
+                        @: <li> @Html.Partial("_LogOnPartial")  </li>
+                    }
+                </ul>            
+    </div><!-- end of #header -->
+    </div>
+<div id="container" class="hfeed">
+
+
+	    <div id="wrapper" class="clearfix">
+    
+        <div id="content-full" class="grid col-940">
+        
+
+		        
+        				                
+            <div id="post-2" class="post-2 page type-page status-publish hentry">
+ 
+                 
+                
+                <div class="post-entry">
+                @RenderBody()
+                
+                             
+            
+            <div class="post-edit"></div> 
+            </div><!-- end of #post-2 -->
+            
+            
+
+
+
+            
+         
+        
+        
+	      
+      
+        </div><!-- end of #content-full -->
+
+    </div><!-- end of #wrapper -->
+    </div><!-- end of #container -->
+    </div>
+<!--
+ * Google Analytics Code, added by Charlie K
+ -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38033629-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+<div id="footer" class="clearfix">
+    <div class="copyright">
+        &copy; 2013<a href="http://betteryinc.com/" title="BETTERY, Inc.">
+            BETTERY, Inc.        </a>
+
+<!-- CK stuck this near the copyright, old implementation was wrapping oddly -->
+
+			        <ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-452"><a href="http://betteryinc.com/bettery-privacy-policy/">PRIVACY POLICY</a></li>
+</ul>        </div><!-- end of .copyright -->
+    <div class="s-icons">
+         <ul class="social-icons"><li class="twitter-icon"><a title="My Action" href="@Url.Action("LogOff", "Account")"><img src="/images/twitter-icon.png" width="24" height="24" alt="Twitter"></a></li><li class="facebook-icon"><a href="http://www.facebook.com/BetteryInc"><img src="/images/facebook-icon.png" width="24" height="24" alt="Facebook"></a></li><li class="linkedin-icon"><a href="http://www.linkedin.com/company/bettery-inc-"><img src="/images/linkedin-icon.png" width="24" height="24" alt="LinkedIn"></a></li></ul><!-- end of .social-icons -->         </div><!-- end of col-380 fit -->
+    <div id="footer-wrapper">
+
+        <div class="grid col-940">
+
+    
+<!-- Footer Menu was here -->
+
+         </div><!-- end of col-940 -->
+         
+        <!-- <div class="grid col-300 copyright">
+             <a href="" title="">
+                            </a>
+        </div> --><!-- end of .copyright -->
+
+        <!-- <div class="grid col-300 scroll-top"><a href="#scroll-top" title=""></a></div> -->
+
+        <!-- <div class="grid col-300 fit powered">
+            <a href="" title="">
+                    </a>
+             <a href="" title="">
+                    </a>
+        </div> --><!-- end .powered -->
+
+    </div><!-- end #footer-wrapper -->
+
+</div><!-- end #footer -->
+
+<script type='text/javascript' src='/scripts/responsive-scripts.js?ver=1.2.1'></script>
+<script type='text/javascript' src='/scripts/responsive-plugins.js?ver=1.1.1'></script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿@model Bettery.WebRole.Models.Member
+
+@{
+    ViewBag.Title = "Details";
+
+}
+        <div class="tabs">
+
+             <ul> 
+                <li id="selected">@Html.ActionLink("MY ACCOUNT", "Details", "Account")
+	            <li>@Html.ActionLink("EDIT ACCOUNT", "Edit", "Account")
+                <li>@Html.ActionLink("PURCHASES", "Transactions", "Account")
+	            
+             </ul>
+
+        </div>
+
+<p>&nbsp;</p>
+<div class="main">
+
+<fieldset>
+    <legend>Member Information</legend>
+
+
+   <table>
+    <tr>
+        <td>FIRST NAME:</td> <td>@Html.DisplayFor(model => model.FirstName)</td> 
+    </tr>
+    
+    <tr>
+        <td>
+        LAST NAME:</td> <td>@Html.DisplayFor(model => model.LastName)</td>
+    </tr>
+
+    <tr>
+        <td>ADDRESS:</td> <td>@Html.DisplayFor(model => model.Address1)</td>
+    
+    </tr>
+
+    <tr>
+    
+        <td>ADDRESS LINE 2:</td> <td>@Html.DisplayFor(model => model.Address2)</td>
+    </tr>
+
+    <tr>
+        <td>CITY:</td> <td>@Html.DisplayFor(model => model.City)</td>
+    </tr>
+
+    <tr>
+        <td>STATE:</td> <td>@Html.DisplayFor(model => model.State)</td>
+    </tr>
+
+    <tr>
+        <td>ZIPCODE:</td> <td>@Html.DisplayFor(model => model.Zipcode)</td>
+    </tr>
+
+    <tr>
+        <td>EMAIL ADDRESS:</td> <td>@Html.DisplayFor(model => model.EmailAddress)</td>
+    </tr>
+
+        <tr>
+        <td>FREE CASES REMAINING:</td> <td>@Html.DisplayFor(model => model.FreeCases)</td>
+    </tr>
+
+    </table>
+
+        <p>
+        @Html.ActionLink("DELETE ACCOUNT", "Delete", "Account")
+    </p>
+
+    <p>
+        @Html.ActionLink("CHANGE PASSWORD", "ChangePassword", "Account")
+    </p>
+</fieldset>
+
+</div>

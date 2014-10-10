@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Bettery.WebRole.Models.Credit>
+           
+@{
+    ViewBag.Title = "Credits";
+}
+
+<h2>Credits</h2>
+
+<table>
+    <tr>
+        <th>
+            Credit Total
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountBalance)
+        </td>
+    </tr>
+}
+
+</table>

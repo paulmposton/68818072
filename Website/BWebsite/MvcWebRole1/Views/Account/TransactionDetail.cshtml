@@ -1,0 +1,70 @@
+﻿@model Bettery.WebRole.Models.TransactionDetail
+@{
+    ViewBag.Title = "Transaction Detail";
+}
+        <div class="tabs">
+
+             <ul> 
+                <li>@Html.ActionLink("MY ACCOUNT", "Details", "Account")
+	            <li>@Html.ActionLink("EDIT ACCOUNT", "Edit", "Account")
+                <li>@Html.ActionLink("PURCHASES", "Transactions", "Account")
+             </ul>
+
+        </div>
+
+<p>&nbsp;</p>
+<div class="main">
+
+<fieldset>
+
+        <legend>Purchase Details</legend>
+
+        <table>
+        <tr>   
+    
+        <td>DATE:</td> <td>@Html.DisplayFor(model => model.TransactionDateTime)</td>
+        </tr>
+    
+        <tr>
+        <td>TOTAL AMOUNT:</td> <td>$@Html.DisplayFor(model => model.TotalAmount)</td>
+        </tr>
+
+    
+        <tr>
+        <td># 4-PACKS of AA Batteries:</td> <td>@Html.DisplayFor(model => model.AAVend)</td>
+        </tr>
+
+    
+        <tr>
+        <td># AAA 4-PACKS AAA Batteries:</td> <td>@Html.DisplayFor(model => model.AAAVend)</td>
+        </tr>
+
+
+    
+        <tr>
+        <td>LOCATION:</td> <td>@Html.DisplayFor(model => model.Store)</td>
+        </tr>
+
+    
+        <tr>
+        <td>CREDIT/DEBIT CARD:</td> <td>...@Html.DisplayFor(model => model.CardInfo)</td>
+        </tr>
+
+        <tr>
+        <td>DEPOSITS:</td> <td>$@Html.DisplayFor(model => model.Deposits)</td>
+        </tr>
+    
+        <tr>
+        <td>PROMOTIONAL DISCOUNT:</td> <td>$@Html.DisplayFor(model => model.PromoCodeAmount)</td>
+        </tr>
+
+
+        <tr>
+        <td>TAX AMOUNT:</td> <td>$@Html.DisplayFor(model => model.TaxAmount)</td>
+        </tr>
+
+        </table>
+
+</fieldset>
+
+</div>

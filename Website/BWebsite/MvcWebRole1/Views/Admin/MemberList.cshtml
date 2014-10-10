@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Bettery.WebRole.Models.Member>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Members</h2>
+
+<table>
+    <tr>
+        <th>
+            
+        </th>
+        <th>
+            MemberID
+        </th>
+        <th>
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        <th>
+            EmailAddress
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <p>@Html.ActionLink("Edit", "EditMember", new { id = item.MemberID }) </p>
+            @Html.ActionLink("Delete", "DeleteMember", new { id = item.MemberID }) 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemberID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+
+    </tr>
+}
+
+</table>

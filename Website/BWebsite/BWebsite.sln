@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Bettery.Web", "BWebsite\Bettery.Web.ccproj", "{FAC05B55-034B-4F2C-AF5F-653CA3DFB052}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bettery.WebRole", "MvcWebRole1\Bettery.WebRole.csproj", "{6BE89C6F-2E0F-4CB9-B634-D558B15331BE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://bettery.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MvcWebRole1\\Bettery.WebRole.csproj
+		SccProjectName1 = MvcWebRole1
+		SccLocalPath1 = MvcWebRole1
+		SccProjectUniqueName2 = BWebsite\\Bettery.Web.ccproj
+		SccProjectName2 = BWebsite
+		SccLocalPath2 = BWebsite
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC05B55-034B-4F2C-AF5F-653CA3DFB052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC05B55-034B-4F2C-AF5F-653CA3DFB052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC05B55-034B-4F2C-AF5F-653CA3DFB052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC05B55-034B-4F2C-AF5F-653CA3DFB052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE89C6F-2E0F-4CB9-B634-D558B15331BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE89C6F-2E0F-4CB9-B634-D558B15331BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE89C6F-2E0F-4CB9-B634-D558B15331BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE89C6F-2E0F-4CB9-B634-D558B15331BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

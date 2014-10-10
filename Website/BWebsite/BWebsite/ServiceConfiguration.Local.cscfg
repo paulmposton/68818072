@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Bettery.Web" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2012-05.1.7">
+  <Role name="Bettery.WebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="BetteryAdmin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECfelD3xo5WuSbdKpXkxCbowDQYJKoZIhvcNAQEBBQAEggEAeYrcYjo9dYFeJzFuJa0YF4GRsgYmxpAdw/dzdKcW92PiiMjHiZeZX372LqfQHU4Fod9BjqHX4tDs548eI/IvtnvLFqiJuazosClpaMM0ILy1EgXCvDG1zxSpmH0KW46kowIWaof7oPC+hDZIiqSe9xtuGE6TyQCx4ZQOyyME/8q0KZXsPsOQI7YnBQ+UzrTeJIjuaAh6xWbFlEUT73mvccUfliN2o20xRpqoVpdwz1AdD9xBrK6n3YweuSl106iBJ7NwtFv+ODKwG2Dvv+qdS93zIJ2VUB5NJFc9iE4lny/i/D+AZQ6oifhsLoZqRIXy36nAs9HiKqhfLZygVgvAhDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECCcDxT2PRdFagBDvveHEaKEhP8UQSbfGJfR0" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-09-03T23:59:59.0000000-07:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="6BE65759C17D62421E3E14AF052629B949BDD9A0" thumbprintAlgorithm="sha1" />
+      <Certificate name="BetteryCert" thumbprint="31588026CD708B07616E20929C30B2B2363AADD8" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

@@ -1,0 +1,820 @@
+/*
+Theme Name: Responsive Child Theme
+Theme URI: http://themeid.com/responsive-theme/
+Description: Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload, Social Networking and Webmaster Tools etc. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), RTL-Language Support, Retina-Ready, W3C Markup Validated and currently translated into 34 languages. Cross-Browser compatible and yes even the IE7. No paid memberships or clubs to get a FREE/Responsive Support you need. http://themeid.com/support
+
+Template: responsive
+Version: 1.0.0
+Author: ThemeID
+Author URI: http://themeid.com
+Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, flexible-width, rtl-language-support
+
+License: GNU General Public License
+License URI: license.txt
+
+Responsive WordPress Theme, Copyright (C) 2003-2012 Emil Uzelac
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* =Import Styles
+-------------------------------------------------------------- */
+@import url('/content/responsive/style.css');
+
+
+
+/* =Start From Here
+-------------------------------------------------------------- */
+
+#header-wrapper{
+    background: #2798cc;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.main 
+{
+    float: left;
+    width: 100%;
+}
+.tabs
+{
+    clear: left;
+}
+.tabs ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+    
+.tabs li {
+	float: left;
+	border: 1px solid #bbb;
+	border-bottom-width: 0;
+	margin: 0;
+}
+    
+.tabs a {
+	text-decoration: none;
+	display: block;
+	background: #eee;
+	padding: 0.24em 1em;
+	color: #00c;
+	width: 8em;
+	text-align: center;
+}
+	
+.tabs a:hover {
+	background: #ddf;
+}
+	
+.tabs #selected {
+	border-color: black;
+}
+	
+.tabs #selected a {
+	position: relative;
+	top: 1px;
+	background: white;
+	color: black;
+	font-weight: bold;
+}
+
+
+
+
+
+#wrapper {
+    overflow:hidden;
+}
+
+/*------------------------------------------------------------------------------*/
+
+/* =Header Menu (Primary)
+-------------------------------------------------------------- */
+.menu {
+
+    background-color: #2798cc;
+    background-image: none;
+    filter: none;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+.menu li:hover > ul {
+    top: 75%;
+    visibility: visible;
+}
+
+.menu ul {
+    min-width: 10em;
+    left: 10px;
+}
+
+.menu a {
+    border-left: none;
+    text-shadow: none;
+}
+
+.menu a:hover {
+    color: #404040;
+    background-color: #2798cc;
+    background-image: none;
+    filter: none;
+}
+
+.menu .current_page_item a,
+.menu .current-menu-item a {
+    background-color: #2798cc;
+}
+
+.menu li li {
+    border-top: 1px solid white;
+}
+
+.menu li li a {
+    padding: 2px 5px 0px 5px;
+    font-weight: 600;
+    color: #404040;
+}
+
+.menu li li a:hover {
+    color: #2798cc;
+}
+
+.menu ul {
+    border: none;
+}
+
+.carrot{
+    width: 12px;
+    height: 8px;
+    display: block;
+
+    background: url(images/triangle.png) no-repeat;
+    background-size: 100%;
+
+    margin-left: 15px;
+}
+
+/* =Primary Main Menu IE Fixes
+-------------------------------------------------------------- */
+.ie7 .menu ul {
+    /*background: url(images/ie7-fix.gif) repeat;*/
+    background: none;
+}
+
+.ie7 .menu li li a{
+    min-width: 90%;
+}
+
+/*------------------------------------------------------------------------------*/
+
+#container{
+    background: white;
+    position: relative;
+}
+
+#footer{
+    max-width: 100%;
+    height: 100px;
+    background-color: #404040;
+}
+
+#footer-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#footer a {
+    color: white;
+}
+
+.s-icons{
+    margin-top: 10px;
+    width: 100px;
+    float: right;
+
+}
+
+#footer .social-icons{
+    /*width: 100px;*/
+}
+
+.copyright{
+    float: left;
+    width: 120px;
+    color: white;
+    /*border: 1px solid pink;*/
+    margin-top: 10px;
+    /*margin-top: -50px;*/
+}
+
+#footer a:hover{
+    color: #ccc;
+}
+
+/* =Links
+-------------------------------------------------------------- */
+a {
+    color: #1897ce;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+
+/* =Media Print
+-------------------------------------------------------------- */
+@media print {
+
+    h1 {
+	    page-break-before: always;
+    }
+
+    h1,  h2,  h3,  h4,  h5,  h6 {
+	    page-break-after: avoid;
+    }
+
+    ul,  ol,  dl {
+	    page-break-before: avoid;
+    }
+}
+
+/*	Retina (HiDPI) Display
+    http://www.quirksmode.org/blog/archives/2012/06/devicepixelrati.html
+-------------------------------------------------------------- */
+@media
+    only screen and (-moz-min-device-pixel-ratio:1.5),
+    only screen and (-o-min-device-pixel-ratio:3/2),
+    only screen and (-webkit-min-device-pixel-ratio:1.5),
+    only screen and (min-device-pixel-ratio:1.5) {
+
+    body {}
+}
+
+/* =Responsive (Mobile) Design
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 980px) {
+
+    body {}
+
+    .grid,
+	.grid-right {
+	    float: none;
+    }
+
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+    }
+
+	.home #widgets {
+		margin-top: 40px;
+	}
+
+    .top-widget,
+    .home .top-widget {
+        margin-top: 0 !important;
+    }
+
+    /*#footer .social-icons {
+        padding-top: 10px;
+    }*/
+
+}
+@media screen and (max-width: 700px) {
+
+    body {}
+
+    /*#logo {
+	    float: none;
+        margin: 0;
+	    text-align: center;
+    }*/
+    #logo {
+        float: left;
+        margin: 0;
+    }
+
+    .grid,
+	.grid-right {
+	    float: none;
+    }
+
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+    }
+
+    .top-widget {
+        float: none;
+        margin: 0 auto 10px auto;
+        position: relative;
+        text-align: center;
+        width: auto;
+    }
+
+    .top-widget .widget-title {
+        text-align: center;
+    }
+
+    .js .menu,
+	.js .sub-header-menu {
+		display: none;
+	}
+
+	/*.top-menu,
+	.footer-menu li {
+	    float: none;
+        font-size: 11px;
+	    text-align: center;
+    }*/
+
+    .top-menu{
+        float: none;
+        font-size: 11px;
+        text-align: center;
+    }
+
+	.tinynav {
+	    display: block;
+		margin: 0 auto;
+		width: 100%;
+        position: relative;
+        z-index: 200;
+	}
+
+	.tinynav {
+		-moz-appearance: none !important;
+		-webkit-appearance: none !important;
+		appearance: none !important;
+		background: #fff url(images/bg-select.png) no-repeat right;
+		border: 1px solid #ccc;
+        font-size: 12px;
+		overflow: hidden;
+		padding: 0.5em 1em 0.5em 0.75em;
+	}
+
+	.ie7 .tinynav,
+	.ie8 .tinynav {
+		padding-right: 10px;
+	}
+
+	.ie9 .tinynav  {
+		padding-right: 8px;
+	}
+
+    #author-meta {
+        padding: 20px;
+    }
+
+    #footer{
+        height: 45px;
+    }
+
+    #footer .social-icons {
+        /*padding-bottom: none;*/
+        /*padding-top: 10px;
+	    text-align: center;*/
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    /*.js .menu,
+    .js .sub-header-menu {
+        display: block;
+        border: 1px solid pink;
+    }
+
+    .tinynav {
+        display: none;
+    }*/
+
+    #footer {
+        text-align: right;
+    }
+
+    #footer .social-icons {
+        padding-bottom: 0px;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    body {}
+
+    /*#logo {
+	    float: none;
+	    text-align: center;
+    }*/
+
+    #logo {
+        float: left;
+        margin: 0;
+
+    }
+
+    .grid,
+	.grid-right {
+	    float: none;
+    }
+
+	#featured-image .fluid-width-video-wrapper {
+	    margin: 20px 0 0 0;
+	}
+
+	.featured-title {
+	    font-size: 40px;
+	    padding: 40px 20px 0 20px
+    }
+
+    .navigation .next,
+    .navigation .previous {
+        text-align: center;
+    }
+
+    .menu ul,
+	.menu li,
+	.top-menu,
+	.footer-menu li,
+	.sub-header-menu li {
+	    float: none;
+	    text-align: center;
+        text-rendering: optimizeSpeed;
+    }
+
+    #footer {
+	    text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    body {}
+
+	#featured p {
+	    font-size: 12px;
+		line-height: 1.2em;
+    }
+
+    .featured-title {
+	    font-size: 35px;
+    }
+
+	.featured-subtitle {
+		font-size: 15px;
+	}
+
+    .call-to-action a.button {
+	    font-size: 14px;
+	    padding: 7px 17px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+
+    body {}
+
+	#featured p {
+	    font-size: 11px;
+		line-height: 1.1em;
+    }
+
+    .featured-title {
+	    font-size: 20px;
+    }
+
+	.featured-subtitle {
+		font-size: 11px;
+	}
+
+    .call-to-action a.button {
+	    font-size: 12px;
+	    padding: 5px 15px;
+    }
+
+    .top-widget area,
+    .top-widget select,
+    .top-widget textarea,
+    .top-widget input[type="text"],
+    .top-widget input[type="password"] {
+        width: 75%;
+    }
+
+    .widget-title,
+    .widget-title-home h3 {
+        font-size: 14px;
+        height: 13px;
+        line-height: 13px;
+        text-align: center;
+    }
+}
+
+/*The last 29 days of the month are the hardest."- Nikola Tesla*/
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/**
+ * Default DropKick theme
+ *
+ * Feel free to edit the default theme
+ * or even add your own.
+ *
+ * See the readme for themeing help
+ *
+ */
+
+/***** Begin Theme, feel free to edit in here! ******/
+
+/* One container to bind them... */
+.dk_container {
+    /*background-color: #f5f5f5;*/
+background: #f5f5f5;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f5f5f5));
+  background: linear-gradient(top, #fff, #f5f5f5);
+
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 12px;
+  /*font-weight: bold;*/
+  font-style: bolder;
+  line-height: 14px;
+  margin-bottom: 18px;
+
+  /*border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;*/
+
+  margin: 0 auto;
+    width: 100%;
+    z-index: 10;
+}
+  .dk_container:focus {
+    outline: 0;
+  }
+  .dk_container a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+/* Opens the dropdown and holds the menu label */
+.dk_toggle {
+  /**
+   * Help: Arrow image not appearing
+   * Try updating this property to your correct dk_arrows.png path
+   */
+  background-image: url('images/menu.png');
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  /*border: 1px solid #ccc;*/
+  font-weight: bolder;
+  color: #666;
+  /*padding: 7px 45px 7px 10px;*/
+  padding: 7px 0px 7px 0px;
+  text-indent: 10px;
+  /*text-shadow: #fff 1px 1px 0;*/
+  /*border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;*/
+
+  /*-webkit-transition: border-color .5s;
+  -moz-transition: border-color .5s;
+  -o-transition: border-color .5s;
+  transition: border-color .5s;*/
+
+    /*margin: 0 auto;*/
+    width: 100%;
+    /*width: 96.5%;*/
+}
+  .dk_toggle:hover {
+    border-color: #b2b2b2;
+    color: #666;
+  }
+  /* Applied when the dropdown is focused */
+  .dk_focus .dk_toggle {
+    border-color: #40b5e2;
+  }
+  .dk_focus .dk_toggle {
+    box-shadow: 0 0 5px #40b5e2;
+    -moz-box-shadow: 0 0 5px #40b5e2;
+    -webkit-box-shadow: 0 0 5px #40b5e2;
+  }
+
+/* Applied whenever the dropdown is open */
+.dk_open {
+  box-shadow: 0 0 5px #40b5e2;
+  -moz-box-shadow: 0 0 5px #40b5e2;
+  -webkit-box-shadow: 0 0 5px #40b5e2;
+  /**
+   * Help: Dropdown menu is covered by something
+   * Try setting this value higher
+   */
+  /* position: relative;*/
+  z-index: 10;
+}
+
+  .dk_open .dk_toggle {
+    /*background-color: #ececec;*/
+    border-color: #b2b2b2;
+    color: #ccc;
+    box-shadow: inset 0 -2px 5px #ccc;
+    font-weight: bolder;
+    /*border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;*/
+
+  }
+
+/* The outer container of the options */
+.dk_options {
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
+  /*border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;*/
+}
+  .dk_options a {
+    background-color: #fff;
+    /*border-bottom: 1px solid #999;*/
+    font-weight: bolder;
+    color: #444;
+    line-height: 2;
+    /*padding: 8px 10px;*/
+    /*padding: 8px 0px 8px 10px;*/
+    padding: 2px 5px 0px 5px;
+  }
+  .dk_options li:last-child a {
+    border-bottom: none;
+  }
+  .dk_options a:hover,
+  .dk_option_current a {
+    background-color: #f5f5f5;
+    /*border-bottom-color: #004c72;*/
+    color: #1897ce;
+    text-decoration: none;
+    /*text-shadow: rgba(0, 0, 0, .5) 0 1px 0;*/
+
+   /* font-size: 10px;
+    line-height: 11px;*/
+  }
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.dk_options_inner {
+  border: 1px solid #b2b2b2;
+  border-bottom-width: 1px;
+  border-bottom-color: #999;
+  color: #333;
+  max-height: 250px;
+  text-shadow: #fff 0 1px 0;
+  /*border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;*/
+   /*background: red;*/
+
+   /*position: relative;
+   z-index: 10;*/
+}
+
+/* Set a max-height on the options inner */
+.dk_options_inner,
+.dk_touch .dk_options {
+  max-height: 250px;
+}
+
+/******  End Theme ******/
+
+/***** Critical to the continued enjoyment of working dropdowns ******/
+
+.dk_container {
+  display: none;
+  float: left;
+  position: relative;
+
+  /*margin: 0 auto;
+    width: 100%;*/
+}
+  .dk_container a {
+    outline: 0;
+  }
+
+.dk_toggle {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  zoom: 1;
+
+  /*margin: 0 auto;
+    width: 100%;*/
+}
+
+.dk_open {
+  position: relative;
+}
+  .dk_open .dk_options {
+    display: block;
+  }
+  .dk_open .dk_label {
+    color: inherit;
+  }
+
+.dk_options {
+  display: none;
+  margin-top: -1px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+
+}
+  .dk_options a,
+  .dk_options a:link,
+  .dk_options a:visited {
+    display: block;
+  }
+  .dk_options_inner {
+    overflow: auto;
+    position: relative;
+  }
+
+.dk_touch .dk_options {
+  overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+  max-height: none;
+  overflow: visible;
+}
+
+.dk_fouc select {
+  position: relative;
+  top: -99999em;
+  visibility: hidden;
+}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/
+
+@media screen and (max-width: 700px) {
+
+.dk_container {
+        display: block;
+    }
+
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+#content .recaptchatable img 
+{
+    width: auto;
+    height: auto;
+}
+
+.recaptchatable, #recaptcha_area tr, #recaptcha_area td, #recaptcha_area th {
+
+line-height:0!important;
+}
+
+.recaptcha_input_area{
+
+height: 30px!important;
+
+}
