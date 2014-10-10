@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F60B023-6F47-4227-B5FC-4CC86E51B88A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bettery.Kiosk</RootNamespace>
+    <AssemblyName>Bettery.Kiosk</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AuthorizeNet">
+      <HintPath>..\Binaries\AuthorizeNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AuthorizeNet.Helpers">
+      <HintPath>..\Binaries\AuthorizeNet.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=1.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Phidget21.NET, Version=2.1.8.112, Culture=neutral, PublicKeyToken=c2b1f2a3594bce52, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Binaries\Phidget21.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit.Extended">
+      <HintPath>..\Binaries\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\CreditCard.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\UIHelper.cs" />
+    <Compile Include="Controllers\AlertController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CheckOutController.cs" />
+    <Compile Include="Controllers\CountDownController.cs" />
+    <Compile Include="Controllers\GetBatteriesController.cs" />
+    <Compile Include="Controllers\GetCaseController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MembershipRegistrationController.cs" />
+    <Compile Include="Controllers\MembershipSubscriptionController.cs" />
+    <Compile Include="Controllers\PromoCodesController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Controllers\SwapController.cs" />
+    <Compile Include="Controllers\VendingController.cs" />
+    <Compile Include="Entities\CheckOutException.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Service References\AuthorizeNet\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddCardToAccount.xaml.cs">
+      <DependentUpon>AddCardToAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CardChoice.xaml.cs">
+      <DependentUpon>CardChoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Confirmation.xaml.cs">
+      <DependentUpon>Confirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnonymousTerms.xaml.cs">
+      <DependentUpon>AnonymousTerms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LearnMoreEnvironment.xaml.cs">
+      <DependentUpon>LearnMoreEnvironment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LearnMoreSavings.xaml.cs">
+      <DependentUpon>LearnMoreSavings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LearnMorePerformance.xaml.cs">
+      <DependentUpon>LearnMorePerformance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LearnMoreHow.xaml.cs">
+      <DependentUpon>LearnMoreHow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LearnMore.xaml.cs">
+      <DependentUpon>LearnMore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Recycle.xaml.cs">
+      <DependentUpon>Recycle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomMessageBox.xaml.cs">
+      <DependentUpon>CustomMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InventoryAdmin.xaml.cs">
+      <DependentUpon>InventoryAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CountDown.xaml.cs">
+      <DependentUpon>CountDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\BaseDAL.cs" />
+    <Compile Include="DataAccess\DbConnectionScope.cs" />
+    <Compile Include="DataAccess\SqlHelper.cs" />
+    <Compile Include="Entities\BetteryUser.cs" />
+    <Compile Include="Entities\BetteryVend.cs" />
+    <Compile Include="Entities\BinProduct.cs" />
+    <Compile Include="Entities\TransactionQueueData.cs" />
+    <Compile Include="Entities\VendEventArgs.cs" />
+    <Compile Include="UserControls\Checkout.xaml.cs">
+      <DependentUpon>Checkout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CreditSwap.xaml.cs">
+      <DependentUpon>CreditSwap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmailReceipt.xaml.cs">
+      <DependentUpon>EmailReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Exchange.xaml.cs">
+      <DependentUpon>Exchange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FAQ.xaml.cs">
+      <DependentUpon>FAQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GetCase.xaml.cs">
+      <DependentUpon>GetCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GetBatteries.xaml.cs">
+      <DependentUpon>GetBatteries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KeyBoard.xaml.cs">
+      <DependentUpon>KeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ErrorMessage.xaml.cs">
+      <DependentUpon>ErrorMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MembershipRegistration.xaml.cs">
+      <DependentUpon>MembershipRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MembershipSubscription.xaml.cs">
+      <DependentUpon>MembershipSubscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MembershipVerification.xaml.cs">
+      <DependentUpon>MembershipVerification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NumericKeyBoard.xaml.cs">
+      <DependentUpon>NumericKeyBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Privacy.xaml.cs">
+      <DependentUpon>Privacy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PromoCodes.xaml.cs">
+      <DependentUpon>PromoCodes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReturnSummary.xaml.cs">
+      <DependentUpon>ReturnSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Terms.xaml.cs">
+      <DependentUpon>Terms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThankYou.xaml.cs">
+      <DependentUpon>ThankYou.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TransactionSummary.xaml.cs">
+      <DependentUpon>TransactionSummary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Vending.xaml.cs">
+      <DependentUpon>Vending.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Selection.xaml.cs">
+      <DependentUpon>Selection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="UserControls\VendingContinue.xaml.cs">
+      <DependentUpon>VendingContinue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ZipCode.xaml.cs">
+      <DependentUpon>ZipCode.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\FlowDocumentPageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AddCardToAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CardChoice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Confirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AnonymousTerms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LearnMoreEnvironment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LearnMoreSavings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LearnMorePerformance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LearnMoreHow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LearnMore.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\Recycle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CustomMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\InventoryAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CountDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\BusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\PasswordBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\RadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Checkout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CreditSwap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EmailReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Exchange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FAQ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\GetCase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\GetBatteries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\KeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ErrorMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MembershipRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MembershipSubscription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MembershipVerification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NumericKeyBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Privacy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PromoCodes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ReturnSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Terms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ThankYou.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TransactionSummary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Vending.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Selection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\VendingContinue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ZipCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ANetApiResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ARBCancelSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ARBCreateSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ARBGetSubscriptionStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ARBUpdateSubscriptionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.CreateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.CreateCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.CreateCustomerProfileTransactionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.CreateCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.DeleteCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.DeleteCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.DeleteCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetBatchStatisticsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetCustomerProfileIdsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetHostedProfilePageResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetSettledBatchListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetTransactionDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetTransactionListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.GetUnsettledTransactionListResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.UpdateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.UpdateCustomerProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.UpdateCustomerShippingAddressResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.UpdateSplitTenderGroupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Bettery.Kiosk.AuthorizeNet.ValidateCustomerPaymentProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AuthorizeNet\Service.wsdl" />
+    <None Include="Service References\BService\Bettery.Kiosk.BService.BetteryMember.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BService\Bettery.Kiosk.BService.Promo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BService\configuration91.svcinfo" />
+    <None Include="Service References\BService\configuration.svcinfo" />
+    <None Include="Service References\BService\KioskService.wsdl" />
+    <None Include="Service References\BService\KioskService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BService\KioskService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BService\KioskService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AuthorizeNet\Service.disco" />
+    <None Include="Service References\AuthorizeNet\configuration91.svcinfo" />
+    <None Include="Service References\AuthorizeNet\configuration.svcinfo" />
+    <None Include="Service References\AuthorizeNet\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\Batteries Small.jpg" />
+    <Content Include="Video\VendPack.wmv" />
+    <Resource Include="Images\Bettery.png" />
+    <Resource Include="Images\BetteryLogo.png" />
+    <Resource Include="Images\BetteryLogoBar.jpg" />
+    <Resource Include="Images\BetteryLogoGrey.png" />
+    <Resource Include="Images\Swipe.png" />
+    <Resource Include="Images\VideoPlaceHolder.jpg" />
+    <Resource Include="Images\Footer1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Header4.png" />
+    <Content Include="Video\AlkalineDeposit.wmv" />
+    <Content Include="Video\Attract.wmv" />
+    <Content Include="Video\betteryTest.wmv" />
+    <Resource Include="Video\CardSwipe.wmv" />
+    <Content Include="Video\InsertPack.wmv" />
+    <Content Include="Video\TestMovie.wmv" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AuthorizeNet\" />
+    <WCFMetadataStorage Include="Service References\BService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\startLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ButtonDown.png" />
+    <Resource Include="Images\ButtonUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ButtonDown1.png" />
+    <Resource Include="Images\ButtonUp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\KeyboardDown.png" />
+    <Resource Include="Images\KeyboardUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Audio\tap.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\startLogo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardWrapper\CardWrapper.csproj">
+      <Project>{566E19F0-6254-4763-9AC8-D5BC892D1356}</Project>
+      <Name>CardWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

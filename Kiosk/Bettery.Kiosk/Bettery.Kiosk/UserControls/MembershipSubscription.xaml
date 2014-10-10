@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.MembershipSubscription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768">
+
+    <Grid Margin="0 100 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Title" Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Subscription Plan" />
+
+        <TextBlock x:Name="Message" Grid.Row="1" Style="{StaticResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Center" Text=""/>
+
+        <Grid VerticalAlignment="Center" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <Style TargetType="BulletDecorator">
+                    <Setter Property="Height" Value="20"/>
+                    <Setter Property="Width" Value="20"/>
+                </Style>
+            </Grid.Resources>
+
+            <RadioButton Name="OneRadioButton" Grid.Row="0" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="OneRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan1" TextWrapping="Wrap" TextAlignment="Justify" Text="8 batteries at a time $0.99 per month (you are currently on this plan) This plan allows you to have up to 8 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+            <RadioButton Name="TwoRadioButton" Grid.Row="1" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="TwoRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan2" TextWrapping="Wrap" TextAlignment="Justify" Text="16 batteries at a time $1.99 per month (you are currently on this plan) This plan allows you to have up to 12 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+            <RadioButton Name="ThreeRadioButton" Grid.Row="2" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="ThreeRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan3" TextWrapping="Wrap" TextAlignment="Justify" Text="24 batteries at a time $2.99 per month (you are currently on this plan), This plan allows you to have up to 24 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+            <RadioButton Name="FourRadioButton" Grid.Row="3" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="FourRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan4" TextWrapping="Wrap" TextAlignment="Justify" Text="32 batteries at a time $3.99 per month (you are currently on this plan) This plan allows you to have up to 32 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+            <RadioButton Name="FiveRadioButton" Grid.Row="4" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="FiveRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan5" TextWrapping="Wrap" TextAlignment="Justify" Text="48 batteries at a time $5.99 per month (you are currently on this plan), This plan allows you to have up to 48 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+            <RadioButton Name="SixRadioButton" Grid.Row="5" FontFamily="Arial" FontSize="20" Foreground="White" Margin="10" Checked="SixRadioButton_Checked">
+                <TextBlock Name="SubscriptionPlan6" TextWrapping="Wrap" TextAlignment="Justify" Text="60 batteries at a time $6.99 per month (you are currently on this plan), This plan allows you to have up to 60 batteries checked out at one time and you can make an unlimited* number of swaps per month."/>
+            </RadioButton>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 15 0 15">
+            <Button x:Name="DoneButton" Height="60" Width="300" FontSize="27" Content="Done" Click="DoneButton_Click"/>
+
+            <Button x:Name="Cancel" Margin="30 0 0 0" Height="60" Width="300" FontSize="27" Content="Cancel" Click="Cancel_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

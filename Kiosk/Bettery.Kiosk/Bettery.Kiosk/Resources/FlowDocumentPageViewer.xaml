@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FlowDocumentPageViewerCustomStyle" TargetType="{x:Type FlowDocumentPageViewer}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="ContextMenu" Value="{x:Null}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Local"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type FlowDocumentPageViewer}">
+                    <DockPanel Language="en-us" LastChildFill="True" Uid="DockPanel_2">
+                        <Grid Background="{TemplateBinding Background}" DockPanel.Dock="Bottom" HorizontalAlignment="Stretch" Uid="Grid_23">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="PART_FindToolBarHost" Grid.Column="0" HorizontalAlignment="Left" Uid="Border_60" Visibility="Collapsed" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Uid="StackPanel_1" VerticalAlignment="Center">
+                                <Button Command="NavigationCommands.PreviousPage" Focusable="False" IsEnabled="{TemplateBinding CanGoToPreviousPage}" ToolTip="Previous Page" Uid="RepeatButton_3" Content="BACK" Height="55" Width="90" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
+                                <TextBlock HorizontalAlignment="Center" Uid="TextBlock_5" VerticalAlignment="Center" FontSize="24" Foreground="White"><Run Text=" "/><Run Text=" "/><InlineUIContainer>
+											<TextBlock Text="{Binding MasterPageNumber, RelativeSource={RelativeSource TemplatedParent}}" Uid="TextBlock_6"/>
+										</InlineUIContainer><Run Text=" "/><Run Text=" of "/><Run Text=" "/><InlineUIContainer>
+											<TextBlock Text="{Binding PageCount, RelativeSource={RelativeSource TemplatedParent}}" Uid="TextBlock_7"/>
+										</InlineUIContainer><Run Text=" "/><Run Text=" "/></TextBlock>
+                                <Button Command="NavigationCommands.NextPage" Focusable="False" IsEnabled="{TemplateBinding CanGoToNextPage}" ToolTip="Next Page" Uid="RepeatButton_4" Content="NEXT" Height="55" Width="90" FontFamily="Arial" FontSize="20" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Grid>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Uid="Border_47" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <AdornerDecorator ClipToBounds="True" Uid="AdornerDecorator_1">
+                                <DocumentPageView DocumentPaginator="{x:Null}" KeyboardNavigation.IsTabStop="False" DocumentViewerBase.IsMasterPage="True" PageNumber="0" KeyboardNavigation.TabIndex="1" KeyboardNavigation.TabNavigation="Local" Uid="DocumentPageView_1"/>
+                            </AdornerDecorator>
+                        </Border>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

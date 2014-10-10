@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.GetCase"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             d:DesignWidth="768" d:DesignHeight="1200"
+             mc:Ignorable="d" Background="{x:Null}">
+    <Grid Margin="0,275,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*" />
+            <ColumnDefinition Width="745*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="2" HorizontalAlignment="Center" Grid.Column="1" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="24*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="LimitedEmptyPackagesTextBlock" TextAlignment="left" Grid.Column="0" Grid.ColumnSpan="4" Style="{DynamicResource SmallTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="You have {0} free cases in your BETTERY membership. Call BETTERY at 800-759-1339 for more."/>
+            
+            <TextBlock Name="GetCaseMessage" Grid.Row="1" Style="{StaticResource SmallTextBlockStyle}" FontSize="20" Text="You have selected 0 of 2 free case(s):" HorizontalAlignment="Right" Margin="0,5" Width="344" />
+            <Button Name="FreeCasePlus" Content="+" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Width="55" Click="FreeCasePlus_Click" FontSize="27" Height="55" />
+            <Button Name="FreeCaseMinus" Content="-" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center" Width="55" Click="FreeCaseMinus_Click" FontSize="27" Height="55" IsEnabled="False" />
+            <TextBox x:Name="FreeCaseTextbox" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" VerticalAlignment="Center" Width="55" Height="55" FontFamily="Arial" FontSize="30" HorizontalContentAlignment="Center" IsReadOnly="True" Text="0" TextChanged="FreeCaseTextbox_TextChanged" />
+        </Grid>
+        <TextBlock Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" Text="FORGOT CASE" VerticalAlignment="Top" Grid.Column="1" Margin="0,-65,0,0" Grid.RowSpan="2" />
+        <TextBlock Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" Text="Select the number of free cases you need." VerticalAlignment="Center" Grid.Column="1" Margin="96,5,119,5" Width="530" />
+        <Button x:Name="DoneButton" Margin="161,30,184,30" Content="CONTINUE" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="center" Width="400" Height="60" BorderBrush="#FF009ACE" Foreground="White" Background="#FF009ACE" FontFamily="Arial" FontSize="27" FontWeight="Bold" Click="DoneButton_Click" RenderTransformOrigin="0.49,5.991" Grid.Column="1" />
+    </Grid>
+</UserControl>

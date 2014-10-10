@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b7fe132-a165-47c3-b3d2-a2a3949277a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://bservice-dev.cloudapp.net/KioskService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KioskService.xsd" MetadataType="Schema" ID="0eaa7abd-2e98-485b-8ebd-c01ed6aa55df" SourceId="1" SourceUrl="http://bservice-dev.cloudapp.net/KioskService.svc?xsd=xsd0" />
+    <MetadataFile FileName="KioskService1.xsd" MetadataType="Schema" ID="01df0e82-e7f6-4784-beee-43d3d30f3f9a" SourceId="1" SourceUrl="http://bservice-dev.cloudapp.net/KioskService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KioskService2.xsd" MetadataType="Schema" ID="ff732a56-78c8-45be-9d5c-33bf5e46e600" SourceId="1" SourceUrl="http://bservice-dev.cloudapp.net/KioskService.svc?xsd=xsd2" />
+    <MetadataFile FileName="KioskService.wsdl" MetadataType="Wsdl" ID="b56df817-fbd0-4555-8fb2-5b460c244bcb" SourceId="1" SourceUrl="http://bservice-dev.cloudapp.net/KioskService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

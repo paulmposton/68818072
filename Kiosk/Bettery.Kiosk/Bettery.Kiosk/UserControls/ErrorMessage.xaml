@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.ErrorMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             d:DesignHeight="1390" d:DesignWidth="768" Background="{x:Null}" OpacityMask="{x:Null}">
+    <Grid Margin="0,683,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="772*" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Style="{StaticResource LargeTextBlockStyle}" Name="MessageTextBlock" Text="This BETTERY Swap Station is out of service.  Please come back later, visit www.BETTERYinc.com for other locations, or call (800)758-1339." TextAlignment="LEFT" VerticalAlignment="Top" Width="550" Foreground="White" FontFamily="Arial" TextWrapping="Wrap" Margin="39,-300,39,0" Background="{x:Null}" />
+        <Button x:Name="DoneButton" Content="CONTINUE" Margin="205" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Width="410" FontSize="26" FontWeight="Bold" Click="DoneButton_Click" Height="64"/>
+    </Grid>
+</UserControl>

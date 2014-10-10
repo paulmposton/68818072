@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Terms"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768">
+    <Grid Margin="0 0 0 0" Background="{x:Null}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="700"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="Title" Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" Text="BETTERY TERMS AND CONDITIONS" FontSize="30" Foreground="Black" Margin="5, 0, 0, 0"/>
+
+        <FlowDocumentPageViewer Name="TermsContent" Grid.Row="1" Width="550" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Zoom="100" MinZoom="100" MaxZoom="100" FlowDirection="LeftToRight" Style="{DynamicResource FlowDocumentPageViewerCustomStyle}">
+            <FlowDocument IsColumnWidthFlexible="True" ColumnGap="0" ColumnWidth="750">
+                <Section FontSize="16pt" FontFamily="Arial">
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        BETTERY, INC. has assembled these terms and conditions in order to document the rules covering your use of the website, www.BETTERYinc.com and/or any BETTERY Swap Station.  Please read this document carefully as your use of www.BETTERYinc.com and/or any BETTERY Swap Station constitutes your agreement with these terms and conditions.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        Copyrights and Trademarks. The trademarks, names, logos and service marks (collectively “trademarks”) displayed on a BETTERY Swap Station or on the BETTERY website are registered and unregistered trademarks of BETTERY. Nothing contained on a BETTERY Swap Station or the BETTERY website should be construed as granting any license or right to use any trademark without the prior written permission of BETTERY. The written and graphic content displayed on any BETTERY Swap Station or on the BETTERY website is owned by BETTERY or its respective author and may not be reproduced in whole, or in part, without the express written permission of the BETTERY or the respective author.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        Limitation of Liability. You agree that BETTERY’s entire liability, and your exclusive remedy, with respect to any products or services provided under this Agreement and any breach of this Agreement is solely limited to the amount you paid for such products or services. BETTERY shall not be liable for any direct, indirect, incidental, special or consequential damages resulting from the use or inability to use any of its products or services or for the cost of procurement of substitute products or services.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        Retail Location Limitation of Liability.  You understand and agree that BETTERY is solely responsible for battery performance and Swap Station function, and that retailers and other organizations providing locations are not responsible for any refunds or financial loss incurred through the use of BETTERY batteries.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        Wireless Carrier.   YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOU HAVE NO CONTRACTUAL RELATIONSHIP WHATSOEVER WITH THE UNDERLYING WIRELESS SERVICE PROVIDER OR ITS AFFILIATES OR CONTRACTORS AND THAT YOU ARE NOT A THIRD PARTY BENEFICIARY OF ANY AGREEMENT BETWEEN BETTERY AND THE UNDERLYING CARRIER. IN ADDITION, YOU ACKNOWLEDGE AND AGREE THAT THE UNDERLYING CARRIER AND ITS AFFILIATES AND CONTRACTORS SHALL HAVE NO LEGAL, EQUITABLE, OR OTHER LIABILITY OF ANY KIND TO YOU AND YOU HEREBY WAIVE ANY AND ALL CLAIMS OR DEMANDS THEREFOR.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        BETTERY reserves the right to revise the terms and conditions of this Agreement at any time. Any such revision will be binding and effective immediately upon posting of the revised Agreement on our web site. Your continued use of any BETTERY Swap Station or the BETTERY website constitutes agreement to any revision of the terms and conditions of this Agreement.
+                    </Paragraph>
+                    <Paragraph TextAlignment="Left" Foreground="Black">
+                        Payment Terms. By completing a purchase transaction on either www.BETTERYinc.com and/or any BETTERY Swap Station, you are agreeing to the Terms and Conditions in this document, and you are agreeing to pay the fees associated with the transaction.
+Governing Law. This Agreement shall be governed in all respects by the laws of the United States of America and by the laws of the State of OREGON. Each of the parties irrevocably consents to the exclusive personal jurisdiction of the federal and state courts located in OREGON, as applicable, for any matter arising out of or relating to this Agreement, except that in actions seeking to enforce any order or any judgment of such federal or state courts located in OREGON, such personal jurisdiction shall be nonexclusive.
+                    </Paragraph>
+                </Section>
+            </FlowDocument>
+        </FlowDocumentPageViewer>
+
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="IAcceptButton" FontSize="27" FontWeight="Bold" Height="60" Width="300" Content="I ACCEPT" Click="IAcceptButton_Click" />
+            <Button Name="CancelButton" Margin="30 0 0 0" FontSize="27" FontWeight="Bold" Height="60" Width="300" Content="CANCEL" Click="CancelButton_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>

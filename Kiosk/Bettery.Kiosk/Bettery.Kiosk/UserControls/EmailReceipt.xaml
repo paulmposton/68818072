@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.EmailReceipt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:UserControls ="clr-namespace:Bettery.Kiosk.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+    <Grid Margin="0 150 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="29" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="313*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="Title" Style="{StaticResource LargeTextBlockStyle}" Width="550" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" TextWrapping="Wrap" Text="EMAIL RECEIPT" Grid.ColumnSpan="2" Margin="0,-60,0,0" />
+        <TextBlock Style="{StaticResource MediumTextBlockStyle}" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="Enter your email address to receive a receipt." Margin="159,5,109,5" />
+
+        <TextBlock Name="Message" Grid.Row="1" Style="{StaticResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="Enter a valid email format including @ and extension such as .COM, .NET, etc." Width="450" Margin="159,5,159,0" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="178,12,140,1">
+            <TextBlock Name="EmailTextBlock" Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5 0 5 0" Text="Email Address:" />
+            <TextBox Name="Email" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="270" MaxLength="50" FontSize="20"/>
+        </StackPanel>
+
+        <StackPanel Name="CapsLockWarningStackPanel" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Hidden">
+            <TextBlock Style="{StaticResource CapsLockTextBlockStyle}" Text="Caps Lock is on" />
+        </StackPanel>
+
+        <UserControls:KeyBoard x:Name="EmailReceiptKeyBoard" Grid.Row="4" Margin="0,10,0,21"/>
+        <Button x:Name="DoneButton" Grid.Row="6" Content="ENTER" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="184,12,184,18" Width="400"  FontFamily="Arial" FontSize="27" FontWeight="bold" Click="DoneButton_Click" Height="60" HorizontalContentAlignment="Center" />
+        <Button x:Name="SkipButton" Grid.Row="7" Content="SKIP" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179,16,179,14" Width="410"  FontFamily="Arial" FontSize="27" FontWeight="bold" Click="SkipButton_Click" Height="60" HorizontalContentAlignment="Center" />
+        
+    </Grid>
+</UserControl>

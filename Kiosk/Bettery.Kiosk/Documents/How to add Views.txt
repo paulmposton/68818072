@@ -1,0 +1,12 @@
+create new user control
+Constants add to ViewName
+Add code to Init Controls in MainWindow.xaml.cs
+Add to NavigateToView
+
+
+Remember to change StationID on deployment instructions
+Return bin capacity
+Change IDs of Phidgets inputs
+Change serial port ID
+
+Where is the event wireup for each button

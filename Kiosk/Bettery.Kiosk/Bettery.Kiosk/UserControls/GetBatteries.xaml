@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.GetBatteries"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+    
+    <Grid Margin="0 50 0 0" Height="900" Width="540">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="Title2" Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="center" TextAlignment="center" Text="SELECT BATTERY PACKS" Margin="0,0,0,0" />
+
+        <Grid Grid.Row="1" Margin="40,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="Title" Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" Grid.ColumnSpan="3" HorizontalAlignment="Left" TextAlignment="Left" Text="SELECT BATTERIES" Margin="0,-45,0,0" Visibility="Hidden"/>
+
+
+            <TextBlock Name="ValueReturnMessage" Grid.Row="2" Grid.ColumnSpan="5" Style="{DynamicResource MediumTextBlockStyle}" VerticalAlignment="Center" Text="You have returned {0} pack(s) of BETTERY batteries." TextWrapping="Wrap"/>
+
+
+            <TextBlock Name="NewSelectMessage" Grid.Row="3" Grid.ColumnSpan="5" Style="{DynamicResource MediumTextBlockStyle}" VerticalAlignment="Center" Text="SWAP up to {0} pack(s) of freshly charged batteries at the SWAP price of ${1:N2} per 4-pack." TextWrapping="Wrap"/>
+
+            <TextBlock Name="Message" Grid.Row="4" Grid.ColumnSpan="5" Style="{DynamicResource MediumTextBlockStyle}" VerticalAlignment="Center" Text="GET additional freshly charged 4-packs for ${1:N2} per pack." TextWrapping="Wrap"/>
+
+            <TextBlock Name="CommitMessage" Grid.Row="5" Grid.ColumnSpan="5" Style="{DynamicResource SmallTextBlockStyle}" Text="Unused Commmit Message goes here" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+            <TextBlock Name="LimitAaMessageTextBlock" Grid.Row="6" Grid.ColumnSpan="5" Style="{DynamicResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="You have reached the quantity of product that can be ordered in a single transaction." TextWrapping="Wrap" />
+            <TextBlock Grid.Column="0" Grid.Row="7" Style="{DynamicResource MediumTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="AA 4-packs" />
+            <Button Name="AAPlus" Grid.Column="1" Grid.Row="7" Content="+" HorizontalAlignment="right" VerticalAlignment="Center" Height="55" Width="55" Click="AAPlus_Click" FontFamily="Arial" Background="#FF009ACE" BorderBrush="#FF009ACE" Foreground="White" FontSize="30" />
+            <Button Name="AAMinus" Grid.Column="2" Grid.Row="7" Content="-" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="55" Width="55" RenderTransformOrigin="2.375,0.713" Click="AAMinus_Click" FontFamily="Arial" Background="#FF009ACE" BorderBrush="#FF009ACE" Foreground="White" FontSize="30" IsEnabled="False" />
+            <TextBox x:Name="AATextbox" Grid.Column="3" Grid.Row="7" HorizontalAlignment="left" TextWrapping="Wrap" VerticalAlignment="Center" Width="55" Height="55" FontFamily="Arial" FontSize="30" HorizontalContentAlignment="Center" IsReadOnly="True" Text="0" TextChanged="AATextbox_TextChanged"/>
+
+            <TextBlock Name="LimitAaaMessageTextBlock" Grid.Row="8" Grid.ColumnSpan="5" Style="{DynamicResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="You have reached the quantity of product that can be ordered in a single transaction." Margin="5,5,0,5" TextWrapping="Wrap"/>
+            <TextBlock Grid.Column="0" Grid.Row="9" Style="{DynamicResource MediumTextBlockStyle}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="AAA 4-packs" />
+            <Button Name="AAAPlus" Grid.Column="1" Grid.Row="9" Content="+" HorizontalAlignment="Right" VerticalAlignment="Center" Height="55" Width="55" Click="AAAPlus_Click" FontFamily="Arial" Background="#FF009ACE" BorderBrush="#FF009ACE" Foreground="White" FontSize="30" />
+            <Button Name="AAAMinus" Grid.Column="2" Grid.Row="9" Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Height="55" Width="55" RenderTransformOrigin="2.375,0.713" Click="AAAMinus_Click" FontFamily="Arial" Background="#FF009ACE" BorderBrush="#FF009ACE" Foreground="White" FontSize="30" HorizontalContentAlignment="Center" IsEnabled="False"/>
+            <TextBox x:Name="AAATextbox" Grid.Column="3" Grid.Row="9" HorizontalAlignment="left" TextWrapping="Wrap" VerticalAlignment="Center" Width="55" Height="55" FontFamily="Arial" FontSize="30" HorizontalContentAlignment="Center" IsReadOnly="True" Text="0" TextChanged="AAATextbox_TextChanged" />
+        </Grid>
+
+        <Button x:Name="DoneButton" Margin="30,183,30,308"  Grid.Row="2" Content="CONTINUE" HorizontalAlignment="Center" VerticalAlignment="center" Height="60" Width="410" FontFamily="Arial" FontSize="26" FontWeight="bold" RenderTransformOrigin="0.49,5.991" Click="DoneButton_Click" />
+        <TextBlock Name="ReturnMessage" Grid.Row="2" Style="{DynamicResource SmallTextBlockStyle}" VerticalAlignment="Center" Text="" Margin="5,111,5,419" />
+        <TextBlock Name="NewMessage" Grid.Row="2" Style="{DynamicResource SmallTextBlockStyle}" VerticalAlignment="Center" Text="" Margin="5,144,5,386" />
+        
+    </Grid>
+        
+</UserControl>

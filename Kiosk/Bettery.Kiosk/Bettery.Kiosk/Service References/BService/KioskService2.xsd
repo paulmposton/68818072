@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www2.betteryinc.com/webservice/KioskService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebRole1.HelperClasses" />
+  <xs:element name="AuthenticateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebRole1.HelperClasses" minOccurs="0" name="AuthenticateUserResult" nillable="true" type="q1:BetteryMember" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBetteryMember">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Zipcode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GetEmails" type="xs:boolean" />
+        <xs:element minOccurs="0" name="SubscriptionPlan" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBetteryMemberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddBetteryMemberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMembership">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+        <xs:element minOccurs="0" name="CustomerProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PaymentProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BatteriesInPlan" type="xs:int" />
+        <xs:element minOccurs="0" name="NewAccountBalance" type="xs:decimal" />
+        <xs:element minOccurs="0" name="isUpgrade" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMembershipResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+        <xs:element minOccurs="0" name="CustomerProfileID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PaymentProfileID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProfileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KioskPing">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="KioskPingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KioskPingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckEmailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPromoCredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PromoCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPromoCreditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebRole1.HelperClasses" minOccurs="0" name="GetPromoCreditResult" nillable="true" type="q2:Promo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemPromoCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PromoCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemPromoCodeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnBinFullAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KioskID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReturnBinFullAlertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProductInventoryAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KioskID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ProductID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProductInventoryAlertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizeDotNetAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KioskID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizeDotNetAlertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransactionFailureAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="KioskID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransactionFailureAlertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmptyCaseVend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MemberID" type="xs:int" />
+        <xs:element minOccurs="0" name="EmptyCases" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EmptyCaseVendResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

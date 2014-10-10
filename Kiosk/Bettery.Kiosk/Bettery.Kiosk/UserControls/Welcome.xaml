@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Welcome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768">
+
+    <Grid Margin="0 100 0 0" Height="947">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210*" />
+            <ColumnDefinition Width="558*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="572*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Title" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="WELCOME TO BETTERY" Grid.ColumnSpan="2" Margin="51,-45,49,199" Width="668" />
+        <TextBlock x:Name="Message" Grid.Row="1" Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="PLEASE SELECT WHAT YOU WOULD LIKE TO DO." Margin="176,5,182,39" Width="410" Grid.ColumnSpan="2" />
+        <Button x:Name="GetBetteryBatteries" Grid.Row="2" FontSize="26" FontWeight="Bold" Height="64" Width="410" Margin="176,15,182,15" Content="GET OR RETURN BATTERIES" Click="GetBetteryBatteries_Click" Grid.ColumnSpan="2" />
+        <Button x:Name="LearnMore" Grid.Row="3" FontSize="26" FontWeight="Bold" Height="64" Width="410" Margin="176,15,182,15" Content="LEARN MORE" Click="LearnMore_Click" Grid.ColumnSpan="2" />
+    </Grid>
+</UserControl>

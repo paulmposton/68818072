@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.ZipCode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:UserControls="clr-namespace:Bettery.Kiosk.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+    <Grid Margin="0,100,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="92"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="168"/>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="549*" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="Title" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="center" Text="CONFIRM ZIP CODE" VerticalAlignment="Top" Margin="5,-56,5,0" />
+        <TextBlock Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="Enter your five digit zip code for verification." Width="550" Margin="5,50,5,14" />
+
+        <TextBlock x:Name="Message" Grid.Row="1" Style="{StaticResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Center" Text="Error Messages Go Here"/>
+
+        <TextBox Name="ZipCodeTextBox" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" MaxLength="5" TextChanged="ZipCodeTextBox_TextChanged" TextAlignment="Center" Margin="259,8,259,26" FontSize="20"/>
+
+        <UserControls:NumericKeyBoard x:Name="ZipcodeNumericKeyboard" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,14,0,0"/>
+
+        <Button x:Name="DoneButton" Grid.Row="4" Margin="30" Content="ENTER" HorizontalAlignment="Center" VerticalAlignment="center" Width="410" Height="60" BorderBrush="#FF009ACE" Foreground="White" Background="#FF009ACE" FontFamily="Arial" FontWeight="Bold" FontSize="27" Click="DoneButton_Click" RenderTransformOrigin="0.49,5.991"/>
+    </Grid>
+</UserControl>

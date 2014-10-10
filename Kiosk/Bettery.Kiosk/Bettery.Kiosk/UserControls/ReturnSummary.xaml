@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.ReturnSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1390">
+    <Grid  Margin="0,100,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Text="Summary Message"  Name="Message" VerticalAlignment="Center" FontSize="30" Foreground="White" FontFamily="Arial" />
+        <TextBlock HorizontalAlignment="Center" Text="Would you like to get more freshly charged batteries?" VerticalAlignment="Center" Grid.Row="1" Name="Message2" FontSize="28" Foreground="White" FontFamily="Arial" TextWrapping="Wrap" />
+        <Button x:Name="YesButton" Margin="15" Content="YES" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="center" Width="450" Click="YesButton_Click" FontSize="30" FontWeight="Bold" Height="60" HorizontalContentAlignment="Center"/>
+        <Button x:Name="NoButton" Margin="15" Content="CHECK OUT NOW" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="center" Width="450" FontSize="30" FontWeight="Bold" Click="NoButton_Click" Height="60" HorizontalContentAlignment="Center"/>
+    </Grid>
+</UserControl>

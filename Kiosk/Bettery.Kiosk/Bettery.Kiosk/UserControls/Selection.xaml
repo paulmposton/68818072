@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Selection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+
+    <Grid Margin="0 100 0 0" Background="{x:Null}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="47"/>
+            <RowDefinition Height="312"/>
+            <RowDefinition Height="450" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Title" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" TextAlignment="Center" Text="WELCOME TO BETTERY" Margin="0,-90,0,165" Width="668" Background="{x:Null}" />
+        <TextBlock Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center"  TextAlignment="Center" Width="480" Margin="144,-28,144,66">GET <Underline>freshly charged</Underline> AA and AAA BETTERY batteries or SWAP <Underline Background="{x:Null}">drained</Underline> BETTERY batteries.</TextBlock>
+        <Image Height="230" Width="480" Source="/Bettery.Kiosk;component/Images/Batteries Small.jpg" HorizontalAlignment="Center" Name="ImageControl" Stretch="Fill" VerticalAlignment="Top" Margin="189,84,189,0" Grid.RowSpan="3" />
+        <Button x:Name="YesButton" Grid.Row="2" Margin="408,189,60,63" Content="SWAP BATTERIES" HorizontalAlignment="Center" VerticalAlignment="center" Width="300" Click="YesButton_Click" FontSize="26" FontWeight="Bold" Height="60" HorizontalContentAlignment="Center" />
+        <Button x:Name="NoButton" Grid.Row="2" Margin="79,189,389,63" Content="GET BATTERIES" HorizontalAlignment="Center" VerticalAlignment="center" Width="300" FontSize="26" FontWeight="Bold" Click="NoButton_Click" Height="60" HorizontalContentAlignment="Center" />
+        <TextBlock Name="SelectionGetMessage" Grid.Row="2" Style="{StaticResource SmallTextBlockStyle}" HorizontalAlignment="Center"  Width="300" Margin="79,0,389,404" Grid.RowSpan="2" VerticalAlignment="Bottom" Height="96">Get a charged 4-pack of batteries for $x.xx (regularly $2.50), plus a $5 one-time deposit.</TextBlock>
+        <TextBlock Name="SelectionSwapMessage" Grid.Row="2" Style="{StaticResource SmallTextBlockStyle}" HorizontalAlignment="Center"  Width="300" Margin="409,260,59,10">Swap a drained 4-pack for a charged one, for $x.xx (regularly $2.50).</TextBlock>
+
+        <!-- <TextBlock Name="SelectionSpecialMessage" Grid.Row="3" Style="{StaticResource MediumTextBlockStyle}" Text="Now with limited time extra savings over our regular price of $2.50 per 4-pack." TextAlignment="Center" VerticalAlignment="Top" Width="620" TextWrapping="Wrap" Background="{x:Null}" Margin="82,5,66,0" /> -->
+        <Button x:Name="LearnMoreButton" Grid.Row="3" Margin="234,59,234,331" Content="LEARN MORE" HorizontalAlignment="Center" VerticalAlignment="center" Width="300" FontSize="26" FontWeight="Bold" Click="LearnMoreButton_Click" Height="60" HorizontalContentAlignment="Center" Background="{x:Null}" />
+        <TextBlock Grid.Row="3" Style="{StaticResource SmallTextBlockStyle}" Text="Forget your case? Log in or sign up as a member to use this button." Margin="0,189,0,220" HorizontalAlignment="Center" Width="300" TextWrapping="Wrap" Background="{x:Null}" />
+        <Button Grid.Row="3" x:Name="GetCaseButton" FontSize="17" FontWeight="Bold" Height="40" Content="I FORGOT MY BATTERY CASE" Click="GetCaseButton_Click" HorizontalAlignment="Center" Margin="0,244,0,0" Width="300" Background="{x:Null}" VerticalAlignment="Top" />
+      <!--  <Button Grid.Row="4" x:Name="ForgotDrainedBatteriesButton" FontSize="17" FontWeight="Bold" Height="40" Content="I FORGOT MY BATTERIES" Click="ForgotDrainedBatteriesButton_Click" Margin="228,71,228,264"/> -->
+    </Grid>
+</UserControl>

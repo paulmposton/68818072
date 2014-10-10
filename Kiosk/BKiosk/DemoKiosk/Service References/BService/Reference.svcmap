@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="55fd6aea-090a-4697-b02d-6e44b6eaa39e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://17d4f3fce985411db2943c2a61e1f7cb.cloudapp.net/KioskService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KioskService.wsdl" MetadataType="Wsdl" ID="a06a73a2-3456-4465-ab88-dd028f2c1b2b" SourceId="1" SourceUrl="http://17d4f3fce985411db2943c2a61e1f7cb.cloudapp.net/KioskService.svc?wsdl" />
+    <MetadataFile FileName="KioskService.xsd" MetadataType="Schema" ID="3b04e3a2-ac5d-4fdb-9c43-7d139ce40a27" SourceId="1" SourceUrl="http://17d4f3fce985411db2943c2a61e1f7cb.cloudapp.net/KioskService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KioskService1.xsd" MetadataType="Schema" ID="ace7a19f-0726-4bc0-913e-5c4a3d983d29" SourceId="1" SourceUrl="http://17d4f3fce985411db2943c2a61e1f7cb.cloudapp.net/KioskService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

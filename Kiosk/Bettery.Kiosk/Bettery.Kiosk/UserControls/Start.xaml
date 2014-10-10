@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Start"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:UserControls="clr-namespace:Bettery.Kiosk.UserControls"
+             mc:Ignorable="d" 
+              d:DesignHeight="1366" d:DesignWidth="768" Background="#0099cf">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!-- <Button x:Name="StartButton" Content="TOUCH HERE" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Top" Width="410" FontSize="26" FontWeight="Bold" Click="GetStartedButton_Click" Height="64" Margin="179,1290,179,0" /> -->
+        <MediaElement Grid.Row="0"  Name="IntroduceMedia" Width="785" Source="Video/Attract.wmv" LoadedBehavior="Play" Volume="1" SnapsToDevicePixels="True" MediaEnded="IntroduceMedia_MediaEnded"></MediaElement>
+        <Border x:Name="MainContentBorder" Grid.Row="1" Grid.Column="1" Width="768" MinHeight="1090" Background="#0099cf"/>
+        <UserControls:CustomMessageBox x:Name="CustomMessageBox" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"/>
+        
+        
+    </Grid>
+</UserControl>

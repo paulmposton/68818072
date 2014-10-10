@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.VendingContinue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="768" d:DesignHeight="1366" Background="{x:Null}">
+    <Grid Margin="0 0 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <MediaElement Name="VendPackMedia" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="768" Height="576" Source="Video/VendPack.mov" LoadedBehavior="Play" Visibility="Visible" Stretch="Fill" Volume="1" SnapsToDevicePixels="True" MediaEnded="VendPackMedia_MediaEnded"/>
+        <TextBlock Grid.Row="2" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" Margin="0,20,0,30" Width="600" Text="Pick up your batteries from the bin, then press VEND MORE to get the remaining batteries" />
+        <Button Name="DoneButton" Grid.Row="3" Height="60" Width="410" Margin="0,20,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="27" Content="VEND MORE" FontWeight="Bold" Click="DoneButton_Click" />
+
+    </Grid>
+</UserControl>

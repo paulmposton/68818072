@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.CreditSwap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:UserControls="clr-namespace:Bettery.Kiosk.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+    <Grid Margin="0,150,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="MessageTextBlock" Style="{DynamicResource LargeTextBlockStyle}" Text="You selected fewer new battery packs than you returned.  If you are sure you want to do this, press CONTINUE to proceed through checkout.  Otherwise press ADDITIONAL BATTERIES to select more batteries." HorizontalAlignment="Center" Margin="0,30,0,30" TextAlignment="Left" VerticalAlignment="Top" Width="500" TextWrapping="Wrap"/>
+        <Button x:Name="AdditionalBatteriesButton" Content="ADDITIONAL BATTERIES" Margin="15"  HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" Width="410" BorderBrush="#FF009ACE" Foreground="#FFFDF9F9" RenderTransformOrigin="0.49,5.991" Background="#FF009ACE" FontFamily="Arial" FontWeight="bold" FontSize="27" Click="AdditionalBatteriesButton_Click" Height="60" HorizontalContentAlignment="Left" />
+        <Button x:Name="SkipButton" Content="CONTINUE " Margin="15"  HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Width="410" BorderBrush="#FF009ACE" Foreground="#FFFDF9F9" RenderTransformOrigin="0.49,5.991" Background="#FF009ACE" FontFamily="Arial" FontSize="27" FontWeight="bold" Click="SkipButton_Click" Height="60" HorizontalContentAlignment="Left" />
+    </Grid>
+</UserControl>

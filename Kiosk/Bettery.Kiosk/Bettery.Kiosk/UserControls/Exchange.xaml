@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Exchange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1081" d:DesignWidth="768" Background="{x:Null}">
+    <Grid Margin="0,75,0,0" Background="{x:Null}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Style="{StaticResource MediumTextBlockStyle}" Text="Insert all of your drained BETTERY batteries in their case(s), using a downward angle.  After inserting all packs, press DONE." VerticalAlignment="Center" Width="550" Foreground="White" TextAlignment="left" Margin="0,-65,0,21"/>
+        <MediaElement Grid.Row="1"  Name="InsertPackMedia" Width="768" Height="576" Source="Video/InsertPack.mov" LoadedBehavior="Play" Volume="1" SnapsToDevicePixels="True" MediaEnded="InsertPackMedia_MediaEnded"></MediaElement>
+        <TextBlock Grid.Row="2" x:Name="BatteriesCountTextBlock" Text="You have inserted {0} battery pack(s)." Style="{StaticResource MediumTextBlockStyle}" Foreground="Black" HorizontalAlignment="Center" Width="410" TextAlignment="Center" TextWrapping="Wrap" Margin="179,30,179,269" Background="{x:Null}" />
+        <Button Grid.Row="2" x:Name="DoneButton" Content="DONE" HorizontalAlignment="Center" Width="410" Click="DoneButton_Click" FontFamily="Arial" FontSize="26" FontWeight="Bold" Height="64" HorizontalContentAlignment="Center" Margin="179,123,179,204" />
+    </Grid>
+</UserControl>

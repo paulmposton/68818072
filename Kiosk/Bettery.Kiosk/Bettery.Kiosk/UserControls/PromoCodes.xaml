@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.PromoCodes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:UserControls="clr-namespace:Bettery.Kiosk.UserControls"
+             mc:Ignorable="d"
+             d:DesignWidth="768" d:DesignHeight="1200" Background="{x:Null}">
+
+    <Grid Margin="0 100 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="479*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Text="PROMO CODE" Background="{x:Null}" />
+
+        <TextBlock Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="center" Text="Enter your promotional discount code for added savings." Margin="0,42,0,0" Width="410" />
+        <TextBlock x:Name="Message" Grid.Row="1" Style="{StaticResource ErrorMessageTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Error Message Goes Here" />
+        
+
+        <TextBox x:Name="PromoCode" Grid.Row="2" VerticalAlignment="Center" TextAlignment="Center" MaxLength="15" TextChanged="PromoCode_TextChanged" FontSize="20" Margin="259,20" />
+
+        <UserControls:NumericKeyBoard x:Name="PromoKeyboard" Grid.Row="3" HorizontalAlignment="Center"/>
+
+        <Button x:Name="DoneButton" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="center" Height="60" Width="410" BorderBrush="#FF009ACE" Foreground="White" Background="#FF009ACE" FontFamily="Arial" FontSize="27" FontWeight="Bold"  Margin="15" RenderTransformOrigin="0.49,5.991" Content="CONTINUE" Click="DoneButton_Click" />
+        <Button x:Name="CancelButton" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="center" Height="60" Width="410" BorderBrush="#FF009ACE" Foreground="White" Background="#FF009ACE" FontFamily="Arial" FontSize="27" FontWeight="Bold" Margin="15" RenderTransformOrigin="0.49,5.991" Content="CANCEL" Click="CancelButton_Click" />
+    </Grid>
+</UserControl>

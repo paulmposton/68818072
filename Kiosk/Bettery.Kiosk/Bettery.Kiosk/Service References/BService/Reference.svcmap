@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc6a5435-345f-4826-80d4-558d71a51d13" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://www2.betteryinc.com/webservice/KioskService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KioskService.wsdl" MetadataType="Wsdl" ID="1d50985a-7845-4187-a275-1a08e02e0000" SourceId="1" SourceUrl="https://www2.betteryinc.com/webservice/KioskService.svc?wsdl" />
+    <MetadataFile FileName="KioskService.xsd" MetadataType="Schema" ID="174bc16f-93da-4d71-9b6a-61652ce7b855" SourceId="1" SourceUrl="https://www2.betteryinc.com/webservice/KioskService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KioskService1.xsd" MetadataType="Schema" ID="008063d5-9e8c-4b7d-a52c-3b1aa312ed30" SourceId="1" SourceUrl="https://www2.betteryinc.com/webservice/KioskService.svc?xsd=xsd2" />
+    <MetadataFile FileName="KioskService2.xsd" MetadataType="Schema" ID="d3ed0860-4e2d-4b2f-bb4b-76daee53d435" SourceId="1" SourceUrl="https://www2.betteryinc.com/webservice/KioskService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

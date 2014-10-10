@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.Checkout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="1200" d:DesignWidth="768" Background="{x:Null}">
+    <Grid Margin="0 75 0 0" Width="768">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="366*" />
+            <ColumnDefinition Width="402*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="75" Height="Auto"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="394*" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Style="{StaticResource LargeTextBlockStyle}" Text="SWIPE CARD FACE UP" VerticalAlignment="Center" Width="520" Foreground="White" TextAlignment="Center" Margin="124,-60,124,122" Grid.ColumnSpan="2" />
+
+        <TextBlock Text="VISA, Mastercard, AMEX, and Discover credit and debit cards accepted here." Style="{StaticResource MediumTextBlockStyle}" Width="443" HorizontalAlignment="center" VerticalAlignment="Top" TextAlignment="Center" TextWrapping="Wrap" Margin="163,16,162,0" Grid.ColumnSpan="2" />
+        <TextBlock Name="PaymentSummary" Style="{StaticResource MediumTextBlockStyle}" Width="520" HorizontalAlignment="center" VerticalAlignment="Top" TextAlignment="center" TextWrapping="Wrap" Margin="124,84,124,0" Text="Total Charge Here" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+
+        <TextBlock x:Name="Message" Grid.Row="1" Style="{StaticResource ErrorMessageTextBlockStyle}" Width="550" HorizontalAlignment="Center" Text="Your card was not approved, please try a different card." TextAlignment="Center" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="112,5,106,0" />
+
+        <TextBox x:Name="ccNumber" Grid.Row="3" Margin="1314,520,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" AllowDrop="True" Width="172" Height="50" Grid.Column="1" />
+        <Button x:Name="ccSubmitButton" Grid.Row="3" Margin="1532,542,-1130,0" Content="Button" IsDefault="True" VerticalAlignment="Top" Click="ccSubmitButton_Click" Grid.Column="1" />
+        <MediaElement Grid.Row="3"  Name="SwipeMedia" Width="768" Source="Video/CardSwipe.mov" LoadedBehavior="Play" Volume="1" SnapsToDevicePixels="True" MediaEnded="SwipeMedia_MediaEnded" Grid.ColumnSpan="2"></MediaElement>
+    </Grid>
+    
+</UserControl>

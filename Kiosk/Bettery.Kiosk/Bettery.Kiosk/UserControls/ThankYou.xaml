@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Bettery.Kiosk.UserControls.ThankYou"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignWidth="768" d:DesignHeight="1366" Background="{x:Null}">
+    <Grid Margin="0 285 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="Center" Text="PICK UP YOUR BATTERIES" TextAlignment="Center" TextWrapping="Wrap" Margin="0,-60,0,0"/>
+        <MediaElement Grid.Row="0" Margin="0,-285,0,0" Grid.RowSpan="4"  Name="ThankYouMedia" Width="768" Visibility="Hidden" Source="Video/ThankYou.wmv" LoadedBehavior="Manual"  Volume="1" SnapsToDevicePixels="True" MediaEnded="ThankYouMedia_MediaEnded"></MediaElement>
+        <MediaElement Name="VendPackMedia" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="768" Height="576" Source="Video/VendPackShort.mov" LoadedBehavior="Manual" Volume="1" SnapsToDevicePixels="True" MediaEnded="VendPackMedia_MediaEnded" />
+        <TextBlock Name="Message" Text="Please pick up your batteries from the bin below." Grid.Row="2" Style="{StaticResource LargeTextBlockStyle}" HorizontalAlignment="center" Margin="0,30,0,0" VerticalAlignment="Top" Width="550" TextAlignment="center" TextWrapping="Wrap" />
+
+        <TextBlock Grid.Row="2" Name="PaymentSummary" Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="520" TextAlignment="Center" TextWrapping="Wrap" Text="" Margin="5,113,5,0" Visibility="Hidden"/>
+
+        <TextBlock Grid.Row="2" Style="{StaticResource MediumTextBlockStyle}" HorizontalAlignment="Center" Margin="0 250 0 0" Text="Do you want another transaction?" Visibility="Hidden"/>
+        <!-- <Button Name="DoneButton" Grid.Row="3" Height="60" Width="410" Margin="0,400,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="27" Content="I'M DONE" FontWeight="Bold" Click="DoneButton_Click" /> -->
+  
+    </Grid>
+</UserControl>
